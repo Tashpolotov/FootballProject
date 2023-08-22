@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient"
+    tools:context=".fragment.upcoming.UpComingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/btn_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <TextView
+                android:id="@+id/tv_table"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
+                android:text="Table"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/inter"/>
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="86dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_table"
+                android:background="@color/white"
+                android:layout_marginStart="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_rating"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_matches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_table"
+            >
+
+
+
+            <TextView
+                android:id="@+id/tv_matches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matches"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                app:layout_constraintStart_toEndOf="@id/tv_table"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/inter"/>
+
+            <View
+                android:id="@+id/tv_view"
+                android:layout_width="4dp"
+                android:layout_height="86dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_matches"
+                android:background="@color/white"
+                android:layout_marginStart="14dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_matches"
+            >
+
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:text="Wordl Rating"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:fontFamily="@font/inter"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_Past"
+            android:layout_width="196dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_matches"
+            android:background="@drawable/gradient_green"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Past"
+                android:textSize="32dp"
+                android:textColor="@color/white"
+                android:layout_marginStart="60dp"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="2dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toEndOf="@id/linear_Past"
+            app:layout_constraintTop_toBottomOf="@id/btn_matches"
+            app:layout_constraintBottom_toBottomOf="@id/linear_Past"
+            android:background="@color/white"
+
+            />
+
+
+        <LinearLayout
+            android:id="@+id/linear_Upcoming"
+            android:layout_width="196dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toTopOf="@id/linear_Past"
+            android:background="@drawable/gradient_green_60"
+
+            app:layout_constraintStart_toEndOf="@id/linear_Past"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upcoming"
+                android:textSize="32dp"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/const_1"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_past"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
