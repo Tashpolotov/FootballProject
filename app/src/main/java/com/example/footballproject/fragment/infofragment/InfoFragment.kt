@@ -15,13 +15,14 @@ import com.example.footballproject.fragment.groupfragment.GroupFragment
 import com.example.footballproject.fragment.pastgame.PastFragment
 import com.example.footballproject.viewmodel.FootballViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class InfoFragment : Fragment() {
 
-    private lateinit var binding:FragmentInfoBinding
-    private val adapter = PlayersAdapter()
+    private lateinit var binding: FragmentInfoBinding
     private val viewModel by viewModels<FootballViewModel>()
+    private val adapter = PlayersAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +34,27 @@ class InfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView()
+
+        val flagResId = arguments?.getInt("flag", R.drawable.qatar)
+        val country = arguments?.getString("country")
+        val name = arguments?.getString("name")
+        country?.let {
+            viewModel.loadPlayer(it)
+            initView(country = it) // Передаем country
+        }
+        binding.imgCountry.setImageResource(flagResId ?: com.example.data.R.drawable.qatar)
+        binding.tvNameCountry.text = name
         initBtn()
+    }
+
+    private fun initView(country: String) {
+        binding.rv.adapter = adapter
+        viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+            viewModel.football.collect {
+                adapter.submitList(it.player)
+            }
+        }
+        viewModel.loadPlayer(country)
     }
 
     private fun initBtn() {
@@ -61,23 +81,6 @@ class InfoFragment : Fragment() {
                 .replace(R.id.fr_container, GroupFragment())
                 .addToBackStack(null)
                 .commit()
-        }
-    }
-
-    private fun initView() {
-        binding.rv.adapter = adapter
-        val selectedCountries = arguments?.getStringArrayList("country")
-        selectedCountries?.let { countries ->
-            viewLifecycleOwner.lifecycleScope.launchWhenCreated {
-                for (selectedCountry in countries) {
-                    Log.d("InfoFragment", "Calling loadPlayer for country: $selectedCountry")
-                    viewModel.loadPlayer(selectedCountry)
-                }
-                viewModel.football.collect { state ->
-                    Log.d("InfoFragment", "Received football state: $state")
-                    adapter.submitList(state.player)
-                }
-            }
         }
     }
 }

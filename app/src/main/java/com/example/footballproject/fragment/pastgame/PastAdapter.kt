@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.domain.model.PasteGameModel
 import com.example.footballproject.databinding.ItemPastBinding
 
@@ -17,7 +18,14 @@ class PastAdapter(val onClick:(PasteGameModel)-> Unit):ListAdapter<PasteGameMode
             binding.tvData.text = model.date
             binding.tvScoreTeam1.text = model.team1Score.toString()
             binding.tvScoreTeam2.text = model.team2Score.toString()
+            Glide.with(binding.root)
+                .load(model.imgCountry1)
+                .into(binding.imgCountry)
+            Glide.with(binding.root)
+                .load(model.imgCountry2)
+                .into(binding.imgCountry2)
 
+            itemView.isActivated = position % 2 == 1
 
             itemView.setOnClickListener {
                 onClick(model)

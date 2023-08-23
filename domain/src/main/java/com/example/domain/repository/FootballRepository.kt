@@ -7,11 +7,12 @@ interface FootballRepository {
 
     fun getCountry(country:String):List<CountryModel>
 
-    fun getPlayer(country: String):List<PlayerModel>
 
     fun getPastGame(name:String):List<PasteGameModel>
 
     fun getUpcoming(name:String):List<UpcomingModel>
+
+    fun getPlayer(country: String):List<PlayerModel>
 
     fun getRating():List<RatingModel>
 }

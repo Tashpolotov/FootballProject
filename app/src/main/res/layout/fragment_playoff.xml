@@ -62,7 +62,7 @@
                 android:id="@+id/tv_matches"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Matches"
+                android:text="@string/matches"
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 android:layout_marginStart="10dp"
@@ -96,7 +96,7 @@
                android:id="@+id/tv_rating"
                android:layout_width="107dp"
                android:layout_height="wrap_content"
-               android:text="Wordl Rating"
+               android:text="@string/world_rating"
                android:textColor="@color/white"
                android:textSize="32sp"
                android:layout_marginStart="10dp"
@@ -119,8 +119,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Group"
-                android:textSize="32dp"
+                android:text="@string/group"
+                android:textSize="32sp"
                 android:textColor="@color/white"
                 android:layout_marginStart="60dp"
                 android:layout_gravity="center"
@@ -151,8 +151,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Playoff"
-                android:textSize="32dp"
+                android:text="@string/playoff"
+                android:textSize="32sp"
                 android:textColor="@color/white"
                 android:layout_marginStart="60dp"
                 android:layout_gravity="center"
@@ -172,7 +172,7 @@
             <TextView
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:text="Date"
+                android:text="@string/date"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -187,7 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="1/8"
+                android:text="@string/_1_8"
                 android:textColor="@color/white"
                 android:textSize="26sp"
                 android:layout_marginTop="4dp"
@@ -202,7 +202,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="FINALS"
+                android:text="@string/finals"
                 android:textColor="@color/white"
                 android:textSize="26sp"
                 android:layout_marginTop="4dp"
@@ -232,7 +232,7 @@
                 android:id="@+id/tv_date"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:text="03/12"
+                android:text="@string/_03_12"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textColor="@color/white"
@@ -244,7 +244,7 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:text="18:00"
+                android:text="@string/_18_00"
                 app:layout_constraintTop_toBottomOf="@id/tv_date"
                 app:layout_constraintStart_toStartOf="@id/tv_date"
                 android:textColor="@color/white"
@@ -261,7 +261,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="8dp"
-                android:text="-"
+                android:text="@string/del"
                 android:textSize="36sp"
                 android:textColor="@color/white"/>
 
@@ -270,7 +270,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_date"
-                android:text="A1"
+                android:text="@string/a1"
                 android:textSize="26sp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="6dp"
@@ -283,7 +283,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/minus"
-                android:text="B1"
+                android:text="@string/b1"
                 android:textSize="26sp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="6dp"
@@ -306,7 +306,7 @@
                 android:id="@+id/tv_date1"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:text="03/12"
+                android:text="@string/_03_12"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textColor="@color/white"
@@ -318,7 +318,7 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:text="18:00"
+                android:text="@string/_18_00"
                 app:layout_constraintTop_toBottomOf="@id/tv_date1"
                 app:layout_constraintStart_toStartOf="@id/tv_date1"
                 android:textColor="@color/white"
@@ -1214,8 +1214,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="6dp"
                 android:textColor="@color/white"/>
-
-
 
             <TextView
                 android:layout_width="wrap_content"

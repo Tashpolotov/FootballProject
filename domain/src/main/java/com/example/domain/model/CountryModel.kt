@@ -2,12 +2,11 @@ package com.example.domain.model
 
 data class CountryModel(
 
+    val name:String,
     val id:String,
-    val group:List<String>,
-    val a1:List<String>,
-    val img:List<Int>,
-    val country:List<String>,
-
-
+    val group:String,
+    val a1:String,
+    val img:Int,
+    val country:String,
 
 )

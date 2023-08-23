@@ -7,9 +7,9 @@ class FootballUseCase(private val repository: FootballRepository) {
 
     operator fun invoke(){
         repository.getCountry(country = String())
-        repository.getPlayer(country = String())
         repository.getPastGame(name = String())
         repository.getUpcoming(name = String())
         repository.getRating()
+        repository.getPlayer(country = String())
     }
 }

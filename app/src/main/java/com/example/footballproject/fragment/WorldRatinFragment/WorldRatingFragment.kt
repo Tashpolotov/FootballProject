@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.footballproject.R
 import com.example.footballproject.databinding.FragmentWorlRatingBinding
+import com.example.footballproject.fragment.groupfragment.GroupFragment
+import com.example.footballproject.fragment.pastgame.PastFragment
 import com.example.footballproject.viewmodel.FootballViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -31,6 +33,22 @@ class WorldRatingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+        initBtn()
+    }
+
+    private fun initBtn() {
+        binding.btnTable.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fr_container, GroupFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+        binding.btnMatches.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fr_container, PastFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     private fun initView() {

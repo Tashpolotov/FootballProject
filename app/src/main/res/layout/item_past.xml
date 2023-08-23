@@ -13,7 +13,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:orientation="horizontal"
-            android:background="@color/backroundLinear1"
+            android:background="@drawable/item_background_selector"
             >
 
             <TextView
@@ -32,15 +32,17 @@
 
             <TextView
                 android:id="@+id/tv_country_name"
-                android:layout_width="140dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="Kyrgyzstan"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/card_1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
                 android:textSize="20sp"
                 android:fontFamily="@font/inter"
+                android:gravity="center"
                 android:layout_marginStart="4dp"
                 />
 
@@ -122,7 +124,7 @@
 
             <TextView
                 android:id="@+id/tv_country_name_2"
-                android:layout_width="140dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="Kyrgyzstan"
                 app:layout_constraintTop_toTopOf="@id/tv_country_name"
@@ -130,16 +132,11 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:fontFamily="@font/inter"
+                android:gravity="center"
                 android:layout_marginStart="8dp"
                 />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        app:layout_constraintTop_toBottomOf="@id/const1"
-        android:background="@color/backroundLinear2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

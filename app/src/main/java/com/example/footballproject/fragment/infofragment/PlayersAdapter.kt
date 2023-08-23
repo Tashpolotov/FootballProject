@@ -14,13 +14,12 @@ class PlayersAdapter:ListAdapter<PlayerModel, PlayersAdapter.PlayersViewHolder>(
 
     inner class PlayersViewHolder(val binding:ItemPlayerBinding):RecyclerView.ViewHolder(binding.root) {
         fun bind(model: PlayerModel) {
-            Log.d("PlayersAdapter", "Binding data for country: ${model.nameCountry}")
-            binding.tvNumberPlayer.text = model.numberPlayer[0].toString()
-            binding.tvNumberPlayer2.text = model.numberPlayer[1].toString()
+            Log.d("PlayersAdapter", "Binding data for country: ${model.namePlayer}")
 
-
-            binding.tvPlayerName.text = model.namePlayer[0].toString()
-            binding.tvPlayerName2.text = model.namePlayer[1].toString()
+            itemView.isActivated = position % 2 == 1 //
+            binding.tvNumberPlayer.text = model.numberPlayer.toString()
+            binding.tvPlayerName.text = model.namePlayer
+            binding.tvPlayerAge.text = model.agePlayer.toString()
 
         }
 

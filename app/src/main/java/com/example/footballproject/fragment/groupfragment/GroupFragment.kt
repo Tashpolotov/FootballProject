@@ -72,9 +72,12 @@ class GroupFragment : Fragment() {
     }
 
     private fun onClick(model: CountryModel) {
+        Log.d("GroupFragment", "Clicked on item with country: ${model.country}")
         val fragment = InfoFragment()
         val bundle = Bundle()
-        bundle.putStringArrayList("country", ArrayList(model.country))
+        bundle.putString("country", model.country)
+        bundle.putInt("flag", model.img)
+        bundle.putString("name", model.name)
         fragment.arguments = bundle
 
         requireActivity().supportFragmentManager.beginTransaction()

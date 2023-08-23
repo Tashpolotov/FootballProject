@@ -31,13 +31,14 @@
 
         <TextView
             android:id="@+id/tv_country_name"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="Kyrgyzstan"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:textColor="@color/white"
+            android:gravity="center"
             android:textSize="20sp"
             android:fontFamily="@font/inter"
             android:layout_marginStart="4dp"
@@ -97,12 +98,13 @@
 
         <TextView
             android:id="@+id/tv_country_name_2"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="Kyrgyzstan"
             app:layout_constraintTop_toTopOf="@id/tv_country_name"
             app:layout_constraintStart_toEndOf="@id/card_2"
             android:textColor="@color/white"
+            android:gravity="center"
             android:textSize="20sp"
             android:fontFamily="@font/inter"
             android:layout_marginStart="8dp"
